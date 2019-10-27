@@ -2,7 +2,7 @@
 # VScodeで入力をテキストから読み込んで標準入力に渡す
 import sys
 import os
-f=open(r'.\A\A_input.txt', 'r', encoding="utf-8")
+f=open(r'.\B\B_input.txt', 'r', encoding="utf-8")
 # inputをフルパスで指定
 # win10でファイルを作るとs-jisで保存されるため、読み込みをutf-8へエンコードする必要あり
 # VScodeでinput file開くとutf8になってるんだけど中身は結局s-jisになっているらしい
@@ -16,9 +16,9 @@ sys.stdin=f
 ##################################
 # %%
 # 以下ペースト可
-A, B = [int(item) for item in input().split()]
-if A >= 10 or B >= 10:
-    print(-1)
+num = int(input())
+ans_list = [ i * j for i in range(1, 10) for j in range(1, 10)]
+if num in ans_list:
+    print('Yes')
 else:
-    print(A*B)
-
+    print('No')
